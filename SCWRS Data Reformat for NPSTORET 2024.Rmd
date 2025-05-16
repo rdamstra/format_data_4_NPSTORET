@@ -1,0 +1,696 @@
+---
+title: "SCWRS Data Reformat 2022"
+author: "Damstra"
+date: "2023-09-28"
+output: html_document
+---
+Step 1: Read the data from SCWRS .xlsx data deliverable
+```{r setup, include=FALSE}
+#START####
+#load packages
+library(tidyverse)
+library(knitr)
+library(stringi)
+library(readxl)
+library(openxlsx)
+library(openxlsx)
+library(lubridate)
+
+#Import Data from SCWRS Excel Deliverable####
+#set working directory for all chunks in code
+#path should typically remain the same, EXCEPT update the year when there is new EDD from lab.
+knitr::opts_knit$set(root.dir = "M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS")
+
+#file path for site names and metadata. Used to populate final data upload file with standardized "official" site IDs and site names. Remember to copy the file to the new year's data folder and adjust the path below accordingly.
+locations <- read.csv("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/GLKNStations.csv")
+
+SCWRs_Data_2022<-read_xlsx("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/2022 edited NPS GLKN final results.xlsx")
+excel_sheets("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/2022 edited NPS GLKN final results.xlsx")
+
+df_MDL <- read_excel("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/2022 edited NPS GLKN final results.xlsx", range = "Glossary, comments and MDLs!D2:H7")
+
+df_TP <- read_excel("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/2022 edited NPS GLKN final results.xlsx", sheet = "TP Results", col_types = c("text","text","date","text","date","text","text"))
+
+df_TN <- read_excel("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/2022 edited NPS GLKN final results.xlsx", sheet = "TN Results", col_types = c("text","text","date","text","date","text","text"))
+
+df_NOx <-  read_excel("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/2022 edited NPS GLKN final results.xlsx", sheet = "NOx Results", col_types = c("text","text","date","text","date","text","text"))
+
+df_NH3 <- read_excel("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/2022 edited NPS GLKN final results.xlsx", sheet = "NH3 Results", col_types = c("text","text","date","text","date","text","text"))
+
+#CHl-A only: data from lab has two columns called "Sample ID" has, which breaks code below where reference is made to "Sample ID" for various reasons. The first appears to be a list of potential IDs. Use "skip" to skip the first column.
+df_Chla <- read_excel("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/2022 edited NPS GLKN final results.xlsx", sheet = "Chl a Results", col_types = c("skip", "text", "text", "date", "text", "numeric", "date", "text", "text"))
+
+#Format "Time Collected" text string as hh:mm, 24 hr (T[hh]:[mm] in extended format; ISO 8601-1:2019 ) instead of HHMM or HMM####
+#add a leading zero to text strings with a width of 3 chars to standardize length of text string to 4 chars.
+df_TP$`Time Collected`<-stri_pad_left(df_TP$`Time Collected`, pad = "0", width = 4)
+df_TN$`Time Collected`<-stri_pad_left(df_TN$`Time Collected`, pad = "0", width = 4)
+df_NOx$`Time Collected`<-stri_pad_left(df_NOx$`Time Collected`, pad = "0", width = 4)
+df_NH3$`Time Collected`<-stri_pad_left(df_NH3$`Time Collected`, pad = "0", width = 4)
+df_Chla$`Time Collected`<-stri_pad_left(df_Chla$`Time Collected`, pad = "0", width = 4)
+
+
+#add ":" to the between the second and third numbers to make the text string formatted as "hh:mm".
+df_TP$`Time Collected`<-df_TP$`Time Collected`%>%
+  sub('(?<=.{2})', ':', ., perl=TRUE)
+
+df_TN$`Time Collected`<-df_TN$`Time Collected`%>%
+  sub('(?<=.{2})', ':', ., perl=TRUE)
+
+df_NOx$`Time Collected`<-df_NOx$`Time Collected`%>%
+  sub('(?<=.{2})', ':', ., perl=TRUE)
+
+df_NH3$`Time Collected`<-df_NH3$`Time Collected`%>%
+  sub('(?<=.{2})', ':', ., perl=TRUE)
+
+df_Chla$`Time Collected`<-df_Chla$`Time Collected`%>%
+  sub('(?<=.{2})', ':', ., perl=TRUE)
+
+#may need to change format of "Time Collected" from text to hh:mm (24 hr); leaving as text string for now since no further calculations will be done on time. May need to change later, depending on behavior into NPSTORET (Damstra 2023-11-29).
+
+#ProjectID####
+#Create ProjectID from Sample ID within the EDD from lab
+df_TP<-df_TP %>%
+mutate(ProjectID = case_when(grepl("ISRO|PIRO|SLBE|APIS|VOYA|INDU", `Sample ID`) ~ as.character("GLKNLKWQ"), grepl("MISS|UM|SACN|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID`, ignore.case = TRUE) ~ as.character("GLKNRVWQ"), grepl("GLKN", `Sample ID`, ignore.case = TRUE) ~ as.character("TripQC")), .before = `Lab ID`)
+
+df_TN<-df_TN %>%
+mutate(ProjectID = case_when(grepl("ISRO|PIRO|SLBE|APIS|VOYA|INDU", `Sample ID2`) ~ as.character("GLKNLKWQ"), grepl("MISS|UM|SACN|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID2`, ignore.case = TRUE) ~ as.character("GLKNRVWQ"), grepl("GLKN", `Sample ID2`, ignore.case = TRUE) ~ as.character("TripQC")), .before = `Lab ID`)
+
+df_NOx<-df_NOx %>%
+mutate(ProjectID = case_when(grepl("ISRO|PIRO|SLBE|APIS|VOYA|INDU", `Sample ID`) ~ as.character("GLKNLKWQ"), grepl("MISS|UM|SACN|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID`, ignore.case = TRUE) ~ as.character("GLKNRVWQ"), grepl("GLKN", `Sample ID`, ignore.case = TRUE) ~ as.character("TripQC")), .before = `Lab ID`)
+
+df_NH3<-df_NH3 %>%
+mutate(ProjectID = case_when(grepl("ISRO|PIRO|SLBE|APIS|VOYA|INDU", `Sample ID`) ~ as.character("GLKNLKWQ"), grepl("MISS|UM|SACN|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID`, ignore.case = TRUE) ~ as.character("GLKNRVWQ"), grepl("GLKN", `Sample ID`, ignore.case = TRUE) ~ as.character("TripQC")), .before = `Lab ID`)
+
+df_Chla<-df_Chla %>%
+mutate(ProjectID = case_when(grepl("ISRO|PIRO|SLBE|APIS|VOYA|INDU", `Sample ID`) ~ as.character("GLKNLKWQ"), grepl("MISS|UM|SACN|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID`, ignore.case = TRUE) ~ as.character("GLKNRVWQ"), grepl("GLKN", `Sample ID`, ignore.case = TRUE) ~ as.character("TripQC")), .before = `Lab ID`)
+
+
+#StationID####
+#Create StationID from Sample ID and Change StationID to fit into GLKN NPSTORET format for upload (PARK_00 for lakes; PARK_RIVR_00 for Rivers; TripQC for Blanks)
+#TP
+df_TP<-df_TP %>% 
+  mutate(StationID = `Sample ID`, .after = `Sample ID`) 
+
+df_TP<-df_TP %>% 
+mutate(StationID = str_remove(StationID, "B10|B20|_B10|_B20"))
+
+df_TP<-df_TP %>%
+mutate(StationID = case_when(grepl("NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", StationID) ~ paste0("SACN_", StationID), TRUE ~ StationID))
+
+df_TP<-df_TP %>%
+mutate(StationID = case_when(grepl("GLKN|APIS00|ISRO00|INDU00|PIRO00|SLBE00|SACN00|VOYA00", `Sample ID`) ~ as.character("TripQC", StationID), TRUE ~ StationID))
+#TN
+df_TN<-df_TN %>% 
+  mutate(StationID = `Sample ID2`, .after = `Sample ID2`) 
+
+df_TN<-df_TN %>% 
+mutate(StationID = str_remove(StationID, "B10|B20|_B10|_B20"))
+
+df_TN<-df_TN %>%
+mutate(StationID = case_when(grepl("NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", StationID) ~ paste0("SACN_", StationID), TRUE ~ StationID))
+
+df_TN<-df_TN %>%
+mutate(StationID = case_when(grepl("GLKN|APIS00|ISRO00|INDU00|PIRO00|SLBE00|SACN00|VOYA00", `Sample ID2`) ~ as.character("TripQC", StationID), TRUE ~ StationID))
+#NOx
+df_NOx<-df_NOx %>% 
+  mutate(StationID = `Sample ID`, .after = `Sample ID`) 
+
+df_NOx<-df_NOx %>% 
+mutate(StationID = str_remove(StationID, "B10|B20|_B10|_B20"))
+
+df_NOx<-df_NOx %>%
+mutate(StationID = case_when(grepl("NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", StationID) ~ paste0("SACN_", StationID), TRUE ~ StationID))
+
+df_NOx<-df_NOx %>%
+mutate(StationID = case_when(grepl("GLKN|APIS00|ISRO00|INDU00|PIRO00|SLBE00|SACN00|VOYA00", `Sample ID`) ~ as.character("TripQC", StationID), TRUE ~ StationID))
+#NH3
+df_NH3<-df_NH3 %>% 
+  mutate(StationID = `Sample ID`, .after = `Sample ID`) 
+
+df_NH3<-df_NH3 %>% 
+mutate(StationID = str_remove(StationID, "B10|B20|_B10|_B20"))
+
+df_NH3<-df_NH3 %>%
+mutate(StationID = case_when(grepl("NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", StationID) ~ paste0("SACN_", StationID), TRUE ~ StationID))
+
+df_NH3<-df_NH3 %>%
+mutate(StationID = case_when(grepl("GLKN|APIS00|ISRO00|INDU00|PIRO00|SLBE00|SACN00|VOYA00", `Sample ID`) ~ as.character("TripQC", StationID), TRUE ~ StationID))
+#Chla
+df_Chla<-df_Chla %>% 
+  mutate(StationID = `Sample ID`, .after = `Sample ID`) 
+
+df_Chla<-df_Chla %>% 
+mutate(StationID = str_remove(StationID, "B10|B20|_B10|_B20"))
+
+df_Chla<-df_Chla %>%
+mutate(StationID = case_when(grepl("NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", StationID) ~ paste0("SACN_", StationID), TRUE ~ StationID))
+
+df_Chla<-df_Chla %>%
+mutate(StationID = case_when(grepl("GLKN|APIS00|ISRO00|INDU00|PIRO00|SLBE00|SACN00|VOYA00", `Sample ID`) ~ as.character("TripQC", StationID), TRUE ~ StationID))
+
+df_Chla$StationID<-gsub(' ', '_', df_Chla$StationID)
+
+#Person Name####
+df_TP<-add_column(df_TP, "Person Name"="", .after = "StationID")
+df_TN<-add_column(df_TN, "Person Name"="", .after = "StationID")
+df_NOx<-add_column(df_NOx, "Person Name"="", .after = "StationID")
+df_NH3<-add_column(df_NH3, "Person Name"="", .after = "StationID")
+df_Chla<-add_column(df_Chla, "Person Name"="", .after = "StationID")
+#Leave blank for now. In future, populate this based on names of crew lead in data used to create visits.
+
+#Depth####
+df_TP<-df_TP %>%
+  mutate(Depth = case_when(grepl("B20", `Sample ID`) ~ as.character("VanDorn"),))#add "VanDorn" as placeholder. In later version, write code to refer to corresponding visit/S123 form outputs to pick the correct depths.
+  
+#Depth Units#### Always "m"
+df_TP<-add_column(df_TP, "Depth Units"="m")
+df_TN<-add_column(df_TN, "Depth Units"="m")
+df_NOx<-add_column(df_NOx, "Depth Units"="m")
+df_NH3<-add_column(df_NH3, "Depth Units"="m")
+df_Chla<-add_column(df_Chla, "Depth Units"="m")
+#Relative Depth####
+#Because APIS samples were not listed as "B10" at end of `sample ID`, had to include all APIS `Sample ID` in with samples with relative depth of "Surface". Should be OK, since APIS sites are shallow and don't stratify and should never have near-bottom "B20" samples.All samples with StationID="TripQC" are blank, since they are lab blanks and have no depth associated with them. 
+df_TP<-df_TP %>%
+  mutate(`Relative Depth` = case_when(grepl("B20", `Sample ID`) ~ as.character("Midwater"), grepl("B10|APIS", `Sample ID`, ignore.case = TRUE) ~ as.character("Surface"), grepl("TripQC", StationID, ignore.case = TRUE) ~ as.character("")))
+
+df_TN<-df_TN %>%
+  mutate(`Relative Depth` = case_when(grepl("B20", `Sample ID2`) ~ as.character("Midwater"), grepl("B10|APIS", `Sample ID2`, ignore.case = TRUE) ~ as.character("Surface"), grepl("TripQC", StationID, ignore.case = TRUE) ~ as.character("")))
+
+df_NOx<-df_NOx %>%
+  mutate(`Relative Depth` = case_when(grepl("B20", `Sample ID`) ~ as.character("Midwater"), grepl("B10|APIS", `Sample ID`, ignore.case = TRUE) ~ as.character("Surface"), grepl("TripQC", StationID, ignore.case = TRUE) ~ as.character("")))
+
+df_NH3<-df_NH3 %>%
+  mutate(`Relative Depth` = case_when(grepl("B20", `Sample ID`) ~ as.character("Midwater"), grepl("B10|APIS", `Sample ID`, ignore.case = TRUE) ~ as.character("Surface"), grepl("TripQC", StationID, ignore.case = TRUE) ~ as.character("")))
+
+df_Chla<-df_Chla %>%
+  mutate(`Relative Depth` = case_when(grepl("B20", `Sample ID`) ~ as.character("Midwater"), grepl("B10|APIS", `Sample ID`, ignore.case = TRUE) ~ as.character("Surface"), grepl("TripQC", StationID, ignore.case = TRUE) ~ as.character("")))
+
+
+#Activity Start Date####
+#passed start date only into a character string using "as.character" to allow "dst" function to work below to parse date to assign time zone.
+df_TP<-df_TP %>%
+mutate(`Activity Start Date` = as.character(`Date Collected`))
+df_TN<-df_TN %>%
+mutate(`Activity Start Date` = as.character(`Date Collected`))
+df_NOx<-df_NOx %>%
+mutate(`Activity Start Date` = as.character(`Date Collected`))
+df_NH3<-df_NH3 %>%
+mutate(`Activity Start Date` = as.character(`Date Collected`))
+df_Chla<-df_Chla %>%
+mutate(`Activity Start Date` = as.character(`Date Collected`))
+#Activity End Date####
+df_TP<-df_TP %>%  
+mutate(`Activity End Date` = `Date Collected`)
+df_TN<-df_TN %>%  
+mutate(`Activity End Date` = `Date Collected`)
+df_NOx<-df_NOx %>%  
+mutate(`Activity End Date` = `Date Collected`)
+df_NH3<-df_NH3 %>%  
+mutate(`Activity End Date` = `Date Collected`)
+df_Chla<-df_Chla %>%  
+mutate(`Activity End Date` = `Date Collected`)
+#Activity Start Time####
+df_TP<-df_TP %>%
+mutate(`Activity Start Time` = "")
+df_TN<-df_TN %>%
+mutate(`Activity Start Time` = "")
+df_NOx<-df_NOx %>%
+mutate(`Activity Start Time` = "")
+df_NH3<-df_NH3 %>%
+mutate(`Activity Start Time` = "")
+df_Chla<-df_Chla %>%
+mutate(`Activity Start Time` = "")
+
+#Activity End Time####
+df_TP<-df_TP %>%  
+mutate(`Activity End Time` = `Time Collected`)
+df_TN<-df_TN %>%  
+mutate(`Activity End Time` = `Time Collected`)
+df_NOx<-df_NOx %>%  
+mutate(`Activity End Time` = `Time Collected`)
+df_NH3<-df_NH3 %>%  
+mutate(`Activity End Time` = `Time Collected`)
+df_Chla<-df_Chla %>%  
+mutate(`Activity End Time` = `Time Collected`)
+#Start Time Zone####
+#Use a series of case_when to create `Start Time Zone` as "CDT", "CST", "EDT", or "EST" based park location and date. 
+#Use "dst" function in lubridate to determine if sample date falls within DST or ST. Creates column in dataframe "DST_TF". "True" = Daylight Savings time (DST), "False" = Standard Time (ST). 
+df_TP<-df_TP %>%
+  mutate(DST_TF = dst(c(df_TP<-`Activity Start Date`)))
+df_TN<-df_TN %>%
+  mutate(DST_TF = dst(c(df_TN<-`Activity Start Date`)))
+df_NOx<-df_NOx %>%
+  mutate(DST_TF = dst(c(df_NOx<-`Activity Start Date`)))
+df_NH3<-df_NH3 %>%
+  mutate(DST_TF = dst(c(df_NH3<-`Activity Start Date`)))
+df_Chla<-df_Chla %>%
+  mutate(DST_TF = dst(c(df_NH3<-`Activity Start Date`)))
+#Convert from true/false to binary 1/0, where 0=FALSE, to make coding the below 'case_when' simpler.
+df_TP<-df_TP %>% 
+  mutate(DST_TF=ifelse(df_TP$DST_TF=="TRUE",1,0))
+df_TN<-df_TN %>% 
+  mutate(DST_TF=ifelse(df_TN$DST_TF=="TRUE",1,0))
+df_NOx<-df_NOx %>% 
+  mutate(DST_TF=ifelse(df_NOx$DST_TF=="TRUE",1,0))
+df_NH3<-df_NH3 %>% 
+  mutate(DST_TF=ifelse(df_NH3$DST_TF=="TRUE",1,0))
+df_Chla<-df_Chla %>% 
+  mutate(DST_TF=ifelse(df_Chla$DST_TF=="TRUE",1,0))
+#Create `Start Time Zone` column  and begin to populate with truncated timezone identifer. Timezone assigned based on park/GLKN code, "Eastern" = "E" or "Central" = "C". 
+df_TP<-df_TP %>%
+  mutate(`Start Time Zone`= case_when(grepl("ISRO|INDU|PIRO|SLBE", `Sample ID` )~ ("E"), grepl("APIS|GLKN|VOYA|SACN|MISS|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID`) ~ ("C")))
+df_TN<-df_TN %>%
+  mutate(`Start Time Zone`= case_when(grepl("ISRO|INDU|PIRO|SLBE", `Sample ID2` )~ ("E"), grepl("APIS|GLKN|VOYA|SACN|MISS|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID2`) ~ ("C")))
+df_NOx<-df_NOx %>%
+  mutate(`Start Time Zone`= case_when(grepl("ISRO|INDU|PIRO|SLBE", `Sample ID` )~ ("E"), grepl("APIS|GLKN|VOYA|SACN|MISS|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID`) ~ ("C")))
+df_NH3<-df_NH3 %>%
+  mutate(`Start Time Zone`= case_when(grepl("ISRO|INDU|PIRO|SLBE", `Sample ID` )~ ("E"), grepl("APIS|GLKN|VOYA|SACN|MISS|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID`) ~ ("C")))
+df_Chla<-df_Chla %>%
+  mutate(`Start Time Zone`= case_when(grepl("ISRO|INDU|PIRO|SLBE", `Sample ID` )~ ("E"), grepl("APIS|GLKN|VOYA|SACN|MISS|NAKA|STCR|CLAM|KINI|SNKE|WILO|PHIP|PACQ|APLE", `Sample ID`) ~ ("C")))
+#Create logical test based on binary 1/0 (T/F) in "DST_TF" to paste0 "DT" or "ST" into `Start Time Zone` behind "E" or "C", based on "dst" function test above. Creates final output of `Start Time Zone` Column. 
+df_TP<-df_TP %>%
+  mutate(`Start Time Zone` = case_when(DST_TF==0 ~ paste0(df_TP$`Start Time Zone`, 'ST'), DST_TF==1 ~ paste0(df_TP$`Start Time Zone`,'DT')))
+df_TN<-df_TN %>%
+  mutate(`Start Time Zone` = case_when(DST_TF==0 ~ paste0(df_TN$`Start Time Zone`, 'ST'), DST_TF==1 ~ paste0(df_TN$`Start Time Zone`,'DT')))
+df_NOx<-df_NOx %>%
+  mutate(`Start Time Zone` = case_when(DST_TF==0 ~ paste0(df_NOx$`Start Time Zone`, 'ST'), DST_TF==1 ~ paste0(df_NOx$`Start Time Zone`,'DT')))
+df_NH3<-df_NH3 %>%
+  mutate(`Start Time Zone` = case_when(DST_TF==0 ~ paste0(df_NH3$`Start Time Zone`, 'ST'), DST_TF==1 ~ paste0(df_NH3$`Start Time Zone`,'DT')))
+df_Chla<-df_Chla %>%
+  mutate(`Start Time Zone` = case_when(DST_TF==0 ~ paste0(df_Chla$`Start Time Zone`, 'ST'), DST_TF==1 ~ paste0(df_Chla$`Start Time Zone`,'DT')))
+
+#Delete "DST_TF" column since it's no longer needed.
+df_TP<-subset(df_TP, select = -DST_TF)
+df_TN<-subset(df_TN, select = -DST_TF)
+df_NOx<-subset(df_NOx, select = -DST_TF)
+df_NH3<-subset(df_NH3, select = -DST_TF)
+df_Chla<-subset(df_Chla, select = -DST_TF)
+#End Time Zone####
+#Create `End Time Zone` by simply copying `Start Time Zone`(with new column name) using mutate.
+df_TP<-df_TP %>%
+  mutate(`End Time Zone` = `Start Time Zone`, .after = `Start Time Zone`)
+df_TN<-df_TN %>%
+  mutate(`End Time Zone` = `Start Time Zone`, .after = `Start Time Zone`)
+df_NOx<-df_NOx %>%
+  mutate(`End Time Zone` = `Start Time Zone`, .after = `Start Time Zone`)
+df_NH3<-df_NH3 %>%
+  mutate(`End Time Zone` = `Start Time Zone`, .after = `Start Time Zone`)
+df_Chla<-df_Chla %>%
+  mutate(`End Time Zone` = `Start Time Zone`, .after = `Start Time Zone`)
+#QC Sample#### (derive from codes within StationID that indicate QAQC data types)
+#Note: This line could miss-label sites as QC_Samples if a new river site IDs occur "98" or "99" river miles. This could happen if SACN sites are near Fox/Nelson's Landing area on the St. Croix or Near Namekagon Dam on the Namekagon River. I have attempted to exclude these by adding a NOT operator to excluded decimals in the grepl ("!.") Has not been tested with actual field data site IDs(Damstra 2023-11-27)
+df_TP<-df_TP %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03!.", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+
+df_TN<-df_TN %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03!.", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+
+df_NOx<-df_NOx %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03!.", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+
+df_NH3<-df_NH3 %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03!.", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+
+df_Chla<-df_Chla %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03!.", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+
+
+#Local Characteristic Name#### ("Total Phosphorus_SCRS" for TP samples, "Total Phosphorus VANDORN_SCRS" for `Sample ID` containing "B20", indicates near bottom TP. 
+df_TP<-add_column(df_TP, "Local Characteristic Name"="Total Phosphorus_SCRS", .before = "TP Final Results (ug P/L)")
+
+df_TN<-add_column(df_TN, "Local Characteristic Name"="Total Nitrogen_SCRS", .before = "TN Final Results (ug N/L)")
+
+df_NOx<-add_column(df_NOx, "Local Characteristic Name"="Nitrate+Nitrite_SCRS", .before = "Final Results (ug N/L as NO3_NO2)")
+
+df_NH3<-add_column(df_NH3, "Local Characteristic Name"="Ammonium_SCRS", .before = "Final Results ug N/L as NH3")
+
+df_Chla<-add_column(df_Chla, "Local Characteristic Name"="chl_a(fluor)_SCRS", .before = "Final Results Chl4-a (ug/L)2")
+
+#Add Local Char names pertinent to VanDorn samples.
+df_TP<-df_TP %>%
+  mutate(`Local Characteristic Name`= ifelse(grepl("B20|b20|vandorn|bottom|Bottom|VanDorn|Van Dorn|van dorn", `Sample ID`),"Total Phosphorus VANDORN_SCRS", `Local Characteristic Name`))
+
+#----  Port "TP Final Results (ug P/L)" column header to as.numeric "Result Text". Preserve  "TP Final Results (ug P/L)"  as.character ----
+#Also create supporting columns for Result Text such as Units, Detection Limit, and Lower Quantification Limit 
+df_TP<-df_TP %>%
+  mutate(`Result Text`=`TP Final Results (ug P/L)`)
+#Change `Result text` to a number (as.numeric) so logical operations will work on them. 
+df_TP$`Result Text`<-as.numeric(df_TP$`Result Text`)
+#Round the numbers in `Result Text` to 2 significant digits
+df_TP$`Result Text`<-round(df_TP$`Result Text`, digits = 2)
+#Units#### (always "ug/L")
+df_TP<-add_column(df_TP, "Units"="ug/L")
+#Detection Limit#### (derive from "MDL" within "df_MDL", data provided annual by lab)
+df_TP$`Detection Limit`<-pull(df_MDL[which(df_MDL$Analyte=='TP'),"MDL"])
+#Lower Quantification Limit#### (derive from "LOQ" within df_MDL", data provided annual by lab)
+df_TP$`Lower Quantification Limit`<-pull(df_MDL[which(df_MDL$Analyte=='TP'), "LOQ"])
+
+#----  Port "TN Final Results (ug N/L)" column header to as.numeric "Result Text". Preserve  "TN Final Results (ug N/L)"  as.character ----
+#Also create supporting columns for Result Text such as Units, Detection Limit, and Lower Quantification Limit 
+df_TN<-df_TN %>%
+  mutate(`Result Text`=`TN Final Results (ug N/L)`)
+#Change `Result text` to a number (as.numeric) so logical operations will work on them. 
+df_TN$`Result Text`<-as.numeric(df_TN$`Result Text`)
+#Round the numbers in `Result Text` to 2 significant digits
+df_TN$`Result Text`<-round(df_TN$`Result Text`, digits = 2)
+#Units#### (always "ug/L")
+df_TN<-add_column(df_TN, "Units"="ug/L")
+#Detection Limit#### (derive from "MDL" within "df_MDL", data provided annual by lab)
+df_TN$`Detection Limit`<-pull(df_MDL[which(df_MDL$Analyte=='TN'),"MDL"])
+#Lower Quantification Limit#### (derive from "LOQ" within df_MDL", data provided annual by lab)
+df_TN$`Lower Quantification Limit`<-pull(df_MDL[which(df_MDL$Analyte=='TN'), "LOQ"])
+
+#----  Port "Final Results (ug N/L as NO3_NO2)" column header to as.numeric "Result Text". Preserve "Final Results (ug N/L as NO3_NO2)" as.character ----
+#Also create supporting columns for Result Text such as Units, Detection Limit, and Lower Quantification Limit 
+df_NOx<-df_NOx %>%
+  mutate(`Result Text`=`Final Results (ug N/L as NO3_NO2)`)
+#Change `Result text` to a number (as.numeric) so logical operations will work on them. 
+df_NOx$`Result Text`<-as.numeric(df_NOx$`Result Text`)
+#Round the numbers in `Result Text` to 2 significant digits
+df_NOx$`Result Text`<-round(df_NOx$`Result Text`, digits = 2)
+#Units#### (always "ug/L")
+df_NOx<-add_column(df_NOx, "Units"="ug/L")
+#Detection Limit#### (derive from "MDL" within "df_MDL", data provided annual by lab)
+df_NOx$`Detection Limit`<-pull(df_MDL[which(df_MDL$Analyte=='NO-x'),"MDL"])
+#Lower Quantification Limit#### (derive from "LOQ" within df_MDL", data provided annual by lab)
+df_NOx$`Lower Quantification Limit`<-pull(df_MDL[which(df_MDL$Analyte=='NO-x'), "LOQ"])
+
+#----  Port "Final Results ug N/L as NH3" column header to as.numeric "Result Text". Preserve "Final Results ug N/L as NH3" as.character
+#Also create supporting columns for Result Text such as Units, Detection Limit, and Lower Quantification Limit 
+df_NH3<-df_NH3 %>%
+  mutate(`Result Text`=`Final Results ug N/L as NH3`)
+#Change `Result text` to a number (as.numeric) so logical operations will work on them. 
+df_NH3$`Result Text`<-as.numeric(df_NH3$`Result Text`)
+#Round the numbers in `Result Text` to 2 significant digits
+df_NH3$`Result Text`<-round(df_NH3$`Result Text`, digits = 2)
+#Units#### (always "ug/L")
+df_NH3<-add_column(df_NH3, "Units"="ug/L")
+#Detection Limit#### (derive from "MDL" within "df_MDL", data provided annual by lab)
+df_NH3$`Detection Limit`<-pull(df_MDL[which(df_MDL$Analyte=='NH3'),"MDL"])
+#Lower Quantification Limit#### (derive from "LOQ" within df_MDL", data provided annual by lab)
+df_NH3$`Lower Quantification Limit`<-pull(df_MDL[which(df_MDL$Analyte=='NH3'), "LOQ"]) 
+
+#----  Port "Final Results Chl4-a (ug/L)2" column header to as.numeric "Result Text". Preserve "Final Results Chl4-a (ug/L)2" as.character
+#Also create supporting columns for Result Text such as Units, Detection Limit, and Lower Quantification Limit 
+df_Chla<-df_Chla %>%
+  mutate(`Result Text`=`Final Results Chl4-a (ug/L)2`)
+#Change `Result text` to a number (as.numeric) so logical operations will work on them. 
+df_Chla$`Result Text`<-as.numeric(df_Chla$`Result Text`)
+#Round the numbers in `Result Text` to 2 significant digits
+df_Chla$`Result Text`<-round(df_Chla$`Result Text`, digits = 2)
+#Units#### (always "ug/L")
+df_Chla<-add_column(df_Chla, "Units"="ug/L")
+#Detection Limit#### (derive from "MDL" within "df_MDL", data provided annually by lab)
+df_Chla$`Detection Limit`<-pull(df_MDL[which(df_MDL$Analyte=='Chl-a'),"MDL"])
+#Lower Quantification Limit#### (derive from "LOQ" within df_MDL", data provided annually by lab)
+df_Chla$`Lower Quantification Limit`<-pull(df_MDL[which(df_MDL$Analyte=='Chl-a'), "LOQ"]) 
+
+#Detection Condition####
+#Logical operation, assign "*Present <QL", "*Non-Detect", or "Detected and Quantified" to "Detection Condition" based on "Result Text", `Detection Limit`, and `Lower Quantification Limit`.
+
+#---- Activity Comment ----#
+#Create activity comment column from rounded result "Result Text" in this case, it is assumed that NA in the data is 'non-detect'. This may not be robust coding, so the user will have to verify that the text is correct in Activity comment. In the future this could be improved.
+df_TP$`Activity Comment`<-paste0("Reported Value: ", as.character(df_TP$`Result Text`))
+df_TN$`Activity Comment`<-paste0("Reported Value: ", as.character(df_TN$`Result Text`))
+df_NOx$`Activity Comment`<-paste0("Reported Value: ", as.character(df_NOx$`Result Text`))
+df_NH3$`Activity Comment`<-paste0("Reported Value: ", as.character(df_NH3$`Result Text`))
+df_Chla$`Activity Comment`<-paste0("Reported Value: ", as.character(df_Chla$`Result Text`))
+#Replace "NA" with "non-detect"
+df_TP$`Activity Comment`<-str_replace_all(df_TP$`Activity Comment`,"Reported Value: NA", "Reported Value: non-detect")
+df_TN$`Activity Comment`<-str_replace_all(df_TN$`Activity Comment`,"Reported Value: NA", "Reported Value: non-detect")
+df_NOx$`Activity Comment`<-str_replace_all(df_NOx$`Activity Comment`,"Reported Value: NA", "Reported Value: non-detect")
+df_NH3$`Activity Comment`<-str_replace_all(df_NH3$`Activity Comment`,"Reported Value: NA", "Reported Value: non-detect")
+df_Chla$`Activity Comment`<-str_replace_all(df_Chla$`Activity Comment`,"Reported Value: NA", "Reported Value: non-detect")
+#---- QC Sample ----#
+#Create QC sample column and mark all station IDs that are QAQC as "Y", based on StationID info.  
+df_TP<-df_TP %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+df_TN<-df_TN %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+df_NOx<-df_NOx %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+df_NH3<-df_NH3 %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+df_Chla<-df_Chla %>%
+  mutate(QC_Sample = case_when(grepl("GLKN_00|TripQC|98|99|INDU_03", StationID) ~ as.character("Y"), ignore.case = TRUE ~ as.character("N")), .after = `Time Collected`)
+#----- `Detection Condition` -----#
+#Use case_when to crate `Detection Condition` and assign "Detected and Quantified", "*Present <QL", and "*Non-Detect" based on logical tests on `Detection Limit` and `Lower Quantification Limit`. Assumes that non-detects had text and were coerced into NA by change from as.character to as. numeric in step above. This may be a bad assumption, will need to verify that this will work in all cases.      
+df_TP<-df_TP %>%
+ mutate(`Detection Condition`=case_when((`Result Text`>=`Lower Quantification Limit`~"Detected and Quantified"), (`Result Text`>`Detection Limit`&`Result Text`<`Lower Quantification Limit` ~ "*Present <QL"),.default ="*Non-Detect"))
+df_TN<-df_TN %>%
+ mutate(`Detection Condition`=case_when((`Result Text`>=`Lower Quantification Limit`~"Detected and Quantified"), (`Result Text`>`Detection Limit`&`Result Text`<`Lower Quantification Limit` ~ "*Present <QL"),.default ="*Non-Detect"))
+df_NOx<-df_NOx %>%
+ mutate(`Detection Condition`=case_when((`Result Text`>=`Lower Quantification Limit`~"Detected and Quantified"), (`Result Text`>`Detection Limit`&`Result Text`<`Lower Quantification Limit` ~ "*Present <QL"),.default ="*Non-Detect"))
+df_NH3<-df_NH3 %>%
+ mutate(`Detection Condition`=case_when((`Result Text`>=`Lower Quantification Limit`~"Detected and Quantified"), (`Result Text`>`Detection Limit`&`Result Text`<`Lower Quantification Limit` ~ "*Present <QL"),.default ="*Non-Detect"))
+df_Chla<-df_Chla %>%
+ mutate(`Detection Condition`=case_when((`Result Text`>=`Lower Quantification Limit`~"Detected and Quantified"), (`Result Text`>`Detection Limit`&`Result Text`<`Lower Quantification Limit` ~ "*Present <QL"),.default ="*Non-Detect"))
+
+#Clean up "Activity Comment" to delete text where "Detected and Quantified" occurs in `Detection Condition`
+df_TP<-df_TP %>%
+  mutate(`Activity Comment`=ifelse(grepl("Detected and Quantified", `Detection Condition`),"", `Activity Comment`))
+df_TN<-df_TN %>%
+  mutate(`Activity Comment`=ifelse(grepl("Detected and Quantified", `Detection Condition`),"", `Activity Comment`))
+df_NOx<-df_NOx %>%
+  mutate(`Activity Comment`=ifelse(grepl("Detected and Quantified", `Detection Condition`),"", `Activity Comment`))
+df_NH3<-df_NH3 %>%
+  mutate(`Activity Comment`=ifelse(grepl("Detected and Quantified", `Detection Condition`),"", `Activity Comment`))
+df_Chla<-df_Chla %>%
+  mutate(`Activity Comment`=ifelse(grepl("Detected and Quantified", `Detection Condition`),"", `Activity Comment`))
+#Add "Comments and Qualifiers" from df_TP to front (left side) of existing text in activity comment. This will capture comments by lab. This will complete Activity comment
+df_TP<-df_TP %>%
+  mutate(`Activity Comment`=paste0(`Comments and Qualifiers`," ", `Activity Comment`))
+df_TN<-df_TN %>%
+  mutate(`Activity Comment`=paste0(`Comments and Qualifiers`," ", `Activity Comment`))
+df_NOx<-df_NOx %>%
+  mutate(`Activity Comment`=paste0(`Comments and Qualifiers`," ", `Activity Comment`))
+df_NH3<-df_NH3 %>%
+  mutate(`Activity Comment`=paste0(`Comments and Qualifiers`," ", `Activity Comment`))
+df_Chla<-df_Chla %>%
+  mutate(`Activity Comment`=paste0(`Comments and Qualifiers`," ", `Activity Comment`))
+
+#Prior step introduced unneeded "NA " in front of `Activity Comment` . Delete them here. Could be a smarter way to code this. May cause a problem in the future if NA's ever end up in comments or qualifiers or if the lab reports NA's.
+df_TP$`Activity Comment`<-gsub("NA ", "", as.character(df_TP$`Activity Comment`))
+df_TN$`Activity Comment`<-gsub("NA ", "", as.character(df_TN$`Activity Comment`))
+df_NOx$`Activity Comment`<-gsub("NA ", "", as.character(df_NOx$`Activity Comment`))
+df_NH3$`Activity Comment`<-gsub("NA ", "", as.character(df_NH3$`Activity Comment`))
+df_Chla$`Activity Comment`<-gsub("NA ", "", as.character(df_Chla$`Activity Comment`))
+#Remark Code####
+#empty column; placeholder for now
+df_TP<-add_column(df_TP, "Remark Code"="")
+df_TN<-add_column(df_TN, "Remark Code"="")
+df_NOx<-add_column(df_NOx, "Remark Code"="")
+df_NH3<-add_column(df_NH3, "Remark Code"="")
+df_Chla<-add_column(df_Chla, "Remark Code"="")
+#Activity ID####
+#empty column; placeholder for now
+df_TP<-add_column(df_TP, "Activity ID"="")
+df_TN<-add_column(df_TN, "Activity ID"="")
+df_NOx<-add_column(df_NOx, "Activity ID"="")
+df_NH3<-add_column(df_NH3, "Activity ID"="")
+df_Chla<-add_column(df_Chla, "Activity ID"="")
+#Activity Type####
+#TP####
+#Total Phosphorus_SCRS
+#Total Phosphorus VANDORN_SCRS
+#Six outcomes for Activity Type
+# 1.) Local Characteristic Name=Total Phosphorus_SCRS AND QC Sample=N AND StationID="SACN_STCR_20.0|SACN_STCR_15.8|SACN_STCR_2.0|PHIP|WILO|PACQ|APIS|ISRO|SLBE|PIRO|VOYA|INDU", THEN Activity Type = "Sample-Integrated Vertical Profile"
+# 2.) Local Characteristic Name=Total Phosphorus_SCRS AND QC Sample=N AND StationID="NAKA|MISS|UM|SACN_STCR_138.9|SACN_STCR_104.0|SACN_STCR_89.7|SACN_STCR_63.8|SACN_STCR_43.7|CLAM|KINI|SNKE|APLE, THEN Activity Type = "NPS Regular/Routine"
+# 3.) Local Characteristic Name="Total Phosphorus VANDORN_SCRS" AND QC Sample=N, THEN Activity Type = "Sample-Other"
+# 4.) Local Characteristic Name="Total Phosphorus VANDORN_SCRS" AND QC Sample=Y, THEN Activity Type = "Quality Control Sample-Field Replicate"
+# 5.) StationID="98|99|INDU_03" AND Local Characteristic Name=Total Phosphorus_SCRS AND QC Sample=Y, THEN Activity Type = "Quality Control Sample-Blind Duplicate"
+# 6.) StationID="TripQC|00" AND Local Characteristic Name=Total Phosphorus_SCRS AND QC Sample=Y, THEN Activity Type = "Quality Control Sample-Equipment Blank"
+
+
+#TN, NOx, NH4, and Chla####
+# TN Local Characteristic Name = "Total Nitrogen_SCRS"
+# NOx Local Characteristic Name = "Nitrate+Nitrite_SCRS"
+# NH4 Local Characteristic Name = "Ammonium_SCRS"
+# Chla Local Characteristic Name = "chl_a(fluor)_SCRS"
+#Four Activity Type Outcomes for each "Local Characteristic Name" combination 
+#1.) QC_Sample = N AND StationID="SACN_STCR_20.0|SACN_STCR_15.8|SACN_STCR_2.0|PHIP|WILO|PACQ|APIS|ISRO|SLBE|PIRO|VOYA|INDU", THEN Activity Type = "Sample-Integrated Vertical Profile"
+
+#2.) StationID="NAKA|MISS|UM|SACN_STCR_138.9|SACN_STCR_104.0|SACN_STCR_89.7|SACN_STCR_63.8|SACN_STCR_43.7|CLAM|KINI|SNKE|APLE, THEN Activity Type = "NPS Regular/Routine"
+
+#3.) StationID="98|99|INDU_03" AND QC Sample=Y, THEN Activity Type = "Quality Control Sample-Blind Duplicate"
+
+#4.) StationID="TripQC|00" AND QC Sample=Y, THEN Activity Type = "Quality Control Sample-Equipment Blank"
+
+#Read in LookUp Table to with values in Local Characteristic Name, QC_Sample, and StationID used to assign each activity type. LookUp table contains all activity types possible for all sites in Lk and Rv projects, plus 
+ActivityLookUp_Final<-read.csv('M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/ActivityLookUpLong.csv')
+
+ActivityLookUp_Final %>% distinct()
+
+
+#############Fixes a single typo in 2022 data; delete later. Won't be needed later##################
+df_TN$StationID <- replace(df_TN$StationID, df_TN$StationID %in% "ISRO_10", "ISRO_01")
+
+#Fix Lookup Table
+#List of station ID
+#Stat_ID<-sort(unique(ActivityLookUp$StationID))
+#ActivityLookUp2<-data.frame(StationID=Stat_ID,Local.Characteristic.Name=	
+#"Total Phosphorus_SCRS",QC_Sample="Y", Activity.Type="Quality Control Sample-Blind Duplicate")
+#ActivityLookUp_Final<-rbind(ActivityLookUp,ActivityLookUp2)
+
+#Stat_ID<-sort(unique(ActivityLookUp$StationID))
+#ActivityLookUp2<-data.frame(StationID=Stat_ID,Local.Characteristic.Name=	
+#"Total Nitrogen_SCRS",QC_Sample="Y", Activity.Type="Quality Control Sample-Blind Duplicate")
+#ActivityLookUp_Final<-rbind(ActivityLookUp,ActivityLookUp2)
+
+
+df_TP<-left_join(df_TP, ActivityLookUp_Final, by=c("StationID"="StationID", "Local Characteristic Name" = "Local.Characteristic.Name", "QC_Sample" = "QC_Sample"))
+
+df_TN<-left_join(df_TN, ActivityLookUp_Final, by=c("StationID"="StationID", "Local Characteristic Name" = "Local.Characteristic.Name", "QC_Sample" = "QC_Sample"))
+
+df_NOx<-left_join(df_NOx, ActivityLookUp_Final, by=c("StationID"="StationID", "Local Characteristic Name" = "Local.Characteristic.Name", "QC_Sample" = "QC_Sample"))
+
+df_NH3<-left_join(df_NH3, ActivityLookUp_Final, by=c("StationID"="StationID", "Local Characteristic Name" = "Local.Characteristic.Name", "QC_Sample" = "QC_Sample"))
+
+df_Chla<-left_join(df_Chla, ActivityLookUp_Final, by=c("StationID"="StationID", "Local Characteristic Name" = "Local.Characteristic.Name", "QC_Sample" = "QC_Sample"))
+
+#this works to assign the correct Activity Type from lookup table to df_TP; clean up dataframes and double-check that it works as expected and matches EDD for NPSTORET RD 01/19/2024
+#use to check work
+#table(df_TP$`Local Characteristic Name`,df_TP$`Activity.Type`,df_TP$QC_Sample)
+
+#colnames(df_TP)
+AllSites_TP<-df_TP %>%
+select("ProjectID","Lab ID","Sample ID","StationID","Person Name","Depth","Depth Units","Relative Depth","Activity Start Date","Activity End Date","Activity Start Time","Activity End Time","Start Time Zone","End Time Zone","QC_Sample","TP Analysis Date","Local Characteristic Name","TP Final Results (ug P/L)","Result Text","Units","Detection Limit","Lower Quantification Limit","Comments and Qualifiers","Detection Condition","Remark Code","Activity ID", "Activity.Type","Activity Comment")     
+
+AllSites_TP$Date_Time <- with(AllSites_TP, paste0(`Activity End Date`," ", `Activity End Time`))
+
+AllSites_TP$Date_Time <- as.POSIXct(AllSites_TP$Date_Time, format = "%Y-%m-%d %H:%M",)
+
+TP_QC_N <- subset(AllSites_TP, QC_Sample == "N"| StationID == "TripQC")
+
+AllSites_TP$StationID <- pull(TP_QC_N[match(AllSites_TP$Date_Time, TP_QC_N$Date_Time), "StationID"])
+
+AllSites_TP <- subset(AllSites_TP, select = -Date_Time)
+
+names(AllSites_TP)[names(AllSites_TP)=="Activity.Type"]<-"Activity Type"
+
+#rm(TP_QC_N)
+
+AllSites_TP %>%
+  group_by(ProjectID) %>%
+  group_walk(~write.xlsx(.x, file = file.path("M:","Monitoring", "Water_Quality", "Large_Rivers", "Data", "Final_Data", "SACN", "2022 SACN", "SCWRS", "To_NPSTORET", fsep = "\\", paste0(.y$ProjectID, "_TP_SCWRS.xlsx"))))
+
+
+AllSites_TN<-df_TN %>%
+select("ProjectID","Lab ID","Sample ID2","StationID","Person Name","Depth Units","Relative Depth","Activity Start Date","Activity End Date","Activity Start Time","Activity End Time","Start Time Zone","End Time Zone","QC_Sample","TN Analysis Date","Local Characteristic Name","TN Final Results (ug N/L)","Result Text","Units","Detection Limit","Lower Quantification Limit","Comments and Qualifiers","Detection Condition","Remark Code","Activity ID", "Activity.Type","Activity Comment")
+
+AllSites_TN$Date_Time <- with(AllSites_TN, paste0(`Activity End Date`," ", `Activity End Time`))
+
+AllSites_TN$Date_Time <- as.POSIXct(AllSites_TN$Date_Time, format = "%Y-%m-%d %H:%M",)
+
+TN_QC_N <- subset(AllSites_TN, QC_Sample == "N"| StationID == "TripQC")
+
+AllSites_TN$StationID <- pull(TN_QC_N[match(AllSites_TN$Date_Time, TN_QC_N$Date_Time), "StationID"])
+
+AllSites_TN <- subset(AllSites_TN, select = -Date_Time)
+
+names(AllSites_TN)[names(AllSites_TN)=="Activity.Type"]<-"Activity Type"
+
+#rm(TN_QC_N)
+
+AllSites_TN %>%
+  group_by(ProjectID) %>%
+  group_walk(~write.xlsx(.x, file= file.path("M:","Monitoring", "Water_Quality", "Large_Rivers", "Data", "Final_Data", "SACN", "2022 SACN", "SCWRS", "To_NPSTORET", fsep = "\\", paste0(.y$ProjectID, "_TN_SCWRS.xlsx"))))
+
+
+AllSites_NOx<-df_NOx %>%
+select("ProjectID","Lab ID","Sample ID","StationID","Person Name","Depth Units","Relative Depth","Activity Start Date","Activity End Date","Activity Start Time","Activity End Time","Start Time Zone","End Time Zone","QC_Sample","NO3_NO2 Analysis Date","Local Characteristic Name","Final Results (ug N/L as NO3_NO2)","Result Text","Units","Detection Limit","Lower Quantification Limit","Comments and Qualifiers","Detection Condition","Remark Code","Activity ID", "Activity.Type","Activity Comment")
+
+AllSites_NOx$Date_Time <- with(AllSites_NOx, paste0(`Activity End Date`," ", `Activity End Time`))
+
+AllSites_NOx$Date_Time <- as.POSIXct(AllSites_NOx$Date_Time, format = "%Y-%m-%d %H:%M",)
+
+NOx_QC_N <- subset(AllSites_NOx, QC_Sample == "N"| StationID == "TripQC")
+
+AllSites_NOx$StationID <- pull(NOx_QC_N[match(AllSites_NOx$Date_Time, NOx_QC_N$Date_Time), "StationID"])
+
+AllSites_NOx <- subset(AllSites_NOx, select = -Date_Time)
+
+names(AllSites_NOx)[names(AllSites_NOx)=="Activity.Type"]<-"Activity Type"
+
+#rm(NOx_QC_N)
+
+AllSites_NOx %>%
+  group_by(ProjectID) %>%
+  group_walk(~write.xlsx(.x, file= file.path("M:","Monitoring", "Water_Quality", "Large_Rivers", "Data", "Final_Data", "SACN", "2022 SACN", "SCWRS", "To_NPSTORET", fsep = "\\", paste0(.y$ProjectID, "_NOx_SCWRS.xlsx"))))
+
+
+AllSites_NH3<-df_NH3 %>%
+select("ProjectID","Lab ID","Sample ID","StationID","Person Name","Depth Units","Relative Depth","Activity Start Date","Activity End Date","Activity Start Time","Activity End Time","Start Time Zone","End Time Zone","QC_Sample","NH3-N Analysis Date","Local Characteristic Name","Final Results ug N/L as NH3","Result Text","Units","Detection Limit","Lower Quantification Limit","Comments and Qualifiers","Detection Condition","Remark Code","Activity ID", "Activity.Type","Activity Comment")
+
+AllSites_NH3$Date_Time <- with(AllSites_NH3, paste0(`Activity End Date`," ", `Activity End Time`))
+
+AllSites_NH3$Date_Time <- as.POSIXct(AllSites_NH3$Date_Time, format = "%Y-%m-%d %H:%M",)
+
+NH3_QC_N <- subset(AllSites_NH3, QC_Sample == "N"| StationID == "TripQC")
+
+AllSites_NH3$StationID <- pull(NH3_QC_N[match(AllSites_NH3$Date_Time, NH3_QC_N$Date_Time), "StationID"])
+
+AllSites_NH3 <- subset(AllSites_NH3, select = -Date_Time)
+
+names(AllSites_NH3)[names(AllSites_NH3)=="Activity.Type"]<-"Activity Type"
+
+#rm(NH3_QC_N)
+
+AllSites_NH3 %>%
+  group_by(ProjectID) %>%
+  group_walk(~write.xlsx(.x, file= file.path("M:","Monitoring", "Water_Quality", "Large_Rivers", "Data", "Final_Data", "SACN", "2022 SACN", "SCWRS", "To_NPSTORET", fsep = "\\", paste0(.y$ProjectID, "_NH3_SCWRS.xlsx"))))
+
+AllSites_Chla<-df_Chla %>%
+select("ProjectID","Lab ID","Sample ID","StationID","Person Name","Depth Units","Relative Depth","Activity Start Date","Activity End Date","Activity Start Time","Activity End Time","Start Time Zone","End Time Zone","QC_Sample","Date Analyzed","Local Characteristic Name","Final Results Chl4-a (ug/L)2","Result Text","Units","Detection Limit","Lower Quantification Limit","Comments and Qualifiers","Detection Condition","Remark Code","Activity ID", "Activity.Type","Activity Comment")
+
+AllSites_Chla$Date_Time <- with(AllSites_Chla, paste0(`Activity End Date`," ", `Activity End Time`))
+
+AllSites_Chla$Date_Time <- as.POSIXct(AllSites_Chla$Date_Time, format = "%Y-%m-%d %H:%M",)
+
+Chla_QC_N <- subset(AllSites_Chla, QC_Sample == "N"| StationID == "TripQC")
+
+AllSites_Chla$StationID <- pull(Chla_QC_N[match(AllSites_Chla$Date_Time, Chla_QC_N$Date_Time), "StationID"])
+
+AllSites_Chla <- subset(AllSites_Chla, select = -Date_Time)
+
+names(AllSites_Chla)[names(AllSites_Chla)=="Activity.Type"]<-"Activity Type"
+
+#rm(Chla_QC_N)
+
+AllSites_Chla %>%
+  group_by(ProjectID) %>%
+  group_walk(~write.xlsx(.x, file= file.path("M:","Monitoring", "Water_Quality", "Large_Rivers", "Data", "Final_Data", "SACN", "2022 SACN", "SCWRS", "To_NPSTORET", fsep = "\\", paste0(.y$ProjectID, "_Chla_SCWRS.xlsx"))))
+
+######END OF TP CODE######
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+
+setwd("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/To_NPSTORET")
+
+"M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/To_NPSTORET"
+
+files<-list.files("M:/Monitoring/Water_Quality/Large_Rivers/Data/Final_Data/SACN/2022 SACN/SCWRS/To_NPSTORET",pattern = ".xlsx")
+files
+data <- setNames(lapply(files, read.xlsx), files)
+write.xlsx(data, file = "SACN2022_SCWRS_STORET.xlsx")
+
+
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

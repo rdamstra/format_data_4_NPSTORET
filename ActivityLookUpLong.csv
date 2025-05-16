@@ -1,0 +1,789 @@
+StationID,Local Characteristic Name,QC_Sample,Activity Type
+APIS_01,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+APIS_02,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+APIS_03,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+APIS_04,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+INDU_01,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+INDU_02,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+INDU_04,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+INDU_05,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+INDU_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_99,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_03,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_01,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_02,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_03,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_04,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_05,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_06,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_07,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_08,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_09,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_13,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_14,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_19,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_20,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_21,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_22,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_24,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_30,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_32,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_01,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_02,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_03,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_04,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_05,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_06,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_07,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_08,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PACQ_SP_01,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PHIP_SP_01,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SACN_WILO_0.5,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_20.0,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_15.8,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_2.0,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_01,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_02,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_03,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_04,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_05,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_07,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_08,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_09,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_10,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_11,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_01,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_02,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_03,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_04,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_05,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_06,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_07,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_08,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_09,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_10,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_11,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_12,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_13,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_14,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_15,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_16,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_17,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_18,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_19,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_20,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_21,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_22,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_23,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_24,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_25,Total Phosphorus_SCRS,N,Sample-Integrated Vertical Profile
+MISS_UM814,Total Phosphorus_SCRS,N,NPS Regular/Routine
+MISS_UM822,Total Phosphorus_SCRS,N,NPS Regular/Routine
+MISS_UM852,Total Phosphorus_SCRS,N,NPS Regular/Routine
+MISS_UM862,Total Phosphorus_SCRS,N,NPS Regular/Routine
+MISS_UM868,Total Phosphorus_SCRS,N,NPS Regular/Routine
+MISS_UM880,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_APLE_0.5,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_CLAM_0.7,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_KINI_2.2,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_NAKA_41.3,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_NAKA_4.8,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_NAKA_74.5,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_NAKA_84.6,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_SNKE_0.5,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_STCR_104.0,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_STCR_138.9,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_STCR_43.7,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_STCR_53.9,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_STCR_63.8,Total Phosphorus_SCRS,N,NPS Regular/Routine
+SACN_STCR_89.7,Total Phosphorus_SCRS,N,NPS Regular/Routine
+APIS_01,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+APIS_02,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+APIS_03,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+APIS_04,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+INDU_01,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+INDU_02,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+INDU_04,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+INDU_05,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_01,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_02,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_03,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_04,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_05,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_06,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_07,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_08,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_09,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_13,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_14,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_19,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_20,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_21,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_22,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_24,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_30,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+ISRO_32,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+PIRO_01,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+PIRO_02,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+PIRO_03,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+PIRO_04,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+PIRO_05,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+PIRO_06,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+PIRO_07,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+PIRO_08,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SACN_PACQ_SP_01,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SACN_PHIP_SP_01,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SACN_WILO_0.5,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SACN_STCR_20.0,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SACN_STCR_15.8,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SACN_STCR_2.0,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_01,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_02,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_03,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_04,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_05,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_07,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_08,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_09,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_10,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+SLBE_11,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_01,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_02,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_03,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_04,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_05,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_06,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_07,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_08,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_09,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_10,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_11,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_12,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_13,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_14,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_15,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_16,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_17,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_18,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_19,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_20,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_21,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_22,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_23,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_24,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+VOYA_25,Total Phosphorus VANDORN_SCRS,N,Sample-Other
+APIS_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+APIS_99,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_99,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_99,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_99,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_99,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_99,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_99,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM098,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM099,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+APIS_01,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+APIS_02,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+APIS_03,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+APIS_04,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+APIS_98,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+APIS_99,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_01,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_02,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_03,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_04,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_05,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_06,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_07,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_08,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_09,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_13,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_14,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_19,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_20,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_21,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_22,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_24,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_30,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_32,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_98,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+ISRO_99,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_01,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_02,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_03,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_04,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_05,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_06,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_07,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_08,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_98,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+PIRO_99,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_PACQ_SP_01,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_PHIP_SP_01,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_WILO_0.5,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_STCR_20.0,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_STCR_15.8,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_STCR_2.0,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_STCR_98,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_NAKA_98,Total Phosphorus_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_98,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SACN_99,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_01,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_02,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_03,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_04,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_05,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_07,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_08,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_09,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_10,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_11,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_98,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+SLBE_99,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_01,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_02,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_03,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_04,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_05,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_06,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_07,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_08,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_09,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_10,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_11,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_12,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_13,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_14,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_15,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_16,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_17,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_18,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_19,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_20,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_21,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_22,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_23,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_24,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_25,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_98,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+VOYA_99,Total Phosphorus VANDORN_SCRS,Y,Quality Control Sample-Field Replicate
+TripQC,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+GLKN_00,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_00,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+INDU_00,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+ISRO_00,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+PIRO_00,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+SLBE_00,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+VOYA_00,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+SACN_00,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+MISS_UM000,Total Phosphorus_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_01,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+APIS_02,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+APIS_03,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+APIS_04,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+INDU_01,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+INDU_02,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+INDU_04,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+INDU_05,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_01,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_02,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_03,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_04,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_05,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_06,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_07,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_08,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_09,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_13,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_14,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_19,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_20,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_21,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_22,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_24,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_30,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_32,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_01,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_02,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_03,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_04,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_05,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_06,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_07,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_08,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PACQ_SP_01,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PHIP_SP_01,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SACN_WILO_0.5,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_20.0,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_15.8,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_2.0,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_01,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_02,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_03,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_04,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_05,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_07,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_08,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_09,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_10,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_11,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_01,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_02,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_03,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_04,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_05,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_06,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_07,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_08,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_09,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_10,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_11,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_12,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_13,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_14,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_15,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_16,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_17,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_18,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_19,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_20,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_21,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_22,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_23,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_24,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_25,Total Nitrogen_SCRS,N,Sample-Integrated Vertical Profile
+MISS_UM814,Total Nitrogen_SCRS,N,NPS Regular/Routine
+MISS_UM822,Total Nitrogen_SCRS,N,NPS Regular/Routine
+MISS_UM852,Total Nitrogen_SCRS,N,NPS Regular/Routine
+MISS_UM862,Total Nitrogen_SCRS,N,NPS Regular/Routine
+MISS_UM868,Total Nitrogen_SCRS,N,NPS Regular/Routine
+MISS_UM880,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_APLE_0.5,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_CLAM_0.7,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_KINI_2.2,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_NAKA_41.3,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_NAKA_4.8,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_NAKA_74.5,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_NAKA_84.6,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_SNKE_0.5,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_STCR_104.0,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_STCR_138.9,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_STCR_43.7,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_STCR_53.9,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_STCR_63.8,Total Nitrogen_SCRS,N,NPS Regular/Routine
+SACN_STCR_89.7,Total Nitrogen_SCRS,N,NPS Regular/Routine
+APIS_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+APIS_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_03,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_98,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_99,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM098,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM099,Total Nitrogen_SCRS,Y,Quality Control Sample-Blind Duplicate
+TripQC,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+GLKN_00,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_00,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+INDU_00,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+ISRO_00,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+PIRO_00,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+SLBE_00,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+VOYA_00,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+SACN_00,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+MISS_UM000,Total Nitrogen_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_01,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+APIS_02,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+APIS_03,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+APIS_04,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+INDU_01,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+INDU_02,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+INDU_04,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+INDU_05,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_01,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_02,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_03,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_04,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_05,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_06,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_07,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_08,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_09,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_13,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_14,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_19,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_20,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_21,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_22,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_24,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_30,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_32,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_01,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_02,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_03,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_04,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_05,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_06,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_07,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_08,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PACQ_SP_01,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PHIP_SP_01,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SACN_WILO_0.5,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_20.0,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_15.8,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_2.0,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_01,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_02,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_03,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_04,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_05,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_07,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_08,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_09,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_10,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_11,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_01,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_02,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_03,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_04,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_05,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_06,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_07,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_08,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_09,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_10,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_11,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_12,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_13,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_14,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_15,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_16,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_17,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_18,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_19,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_20,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_21,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_22,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_23,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_24,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_25,Nitrate+Nitrite_SCRS,N,Sample-Integrated Vertical Profile
+MISS_UM814,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+MISS_UM822,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+MISS_UM852,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+MISS_UM862,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+MISS_UM868,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+MISS_UM880,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_APLE_0.5,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_CLAM_0.7,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_KINI_2.2,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_NAKA_41.3,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_NAKA_4.8,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_NAKA_74.5,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_NAKA_84.6,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_SNKE_0.5,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_STCR_104.0,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_STCR_138.9,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_STCR_43.7,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_STCR_53.9,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_STCR_63.8,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+SACN_STCR_89.7,Nitrate+Nitrite_SCRS,N,NPS Regular/Routine
+APIS_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+APIS_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_03,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_98,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_99,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM098,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM099,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Blind Duplicate
+TripQC,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+GLKN_00,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_00,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+INDU_00,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+ISRO_00,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+PIRO_00,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+SLBE_00,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+VOYA_00,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+SACN_00,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+MISS_UM000,Nitrate+Nitrite_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_01,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+APIS_02,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+APIS_03,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+APIS_04,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+INDU_01,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+INDU_02,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+INDU_04,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+INDU_05,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_01,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_02,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_03,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_04,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_05,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_06,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_07,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_08,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_09,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_13,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_14,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_19,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_20,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_21,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_22,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_24,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_30,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_32,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_01,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_02,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_03,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_04,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_05,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_06,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_07,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_08,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PACQ_SP_01,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PHIP_SP_01,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SACN_WILO_0.5,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_20.0,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_15.8,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_2.0,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_01,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_02,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_03,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_04,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_05,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_07,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_08,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_09,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_10,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_11,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_01,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_02,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_03,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_04,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_05,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_06,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_07,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_08,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_09,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_10,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_11,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_12,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_13,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_14,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_15,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_16,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_17,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_18,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_19,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_20,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_21,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_22,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_23,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_24,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_25,Ammonium_SCRS,N,Sample-Integrated Vertical Profile
+MISS_UM814,Ammonium_SCRS,N,NPS Regular/Routine
+MISS_UM822,Ammonium_SCRS,N,NPS Regular/Routine
+MISS_UM852,Ammonium_SCRS,N,NPS Regular/Routine
+MISS_UM862,Ammonium_SCRS,N,NPS Regular/Routine
+MISS_UM868,Ammonium_SCRS,N,NPS Regular/Routine
+MISS_UM880,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_APLE_0.5,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_CLAM_0.7,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_KINI_2.2,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_NAKA_41.3,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_NAKA_4.8,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_NAKA_74.5,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_NAKA_84.6,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_SNKE_0.5,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_STCR_104.0,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_STCR_138.9,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_STCR_43.7,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_STCR_53.9,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_STCR_63.8,Ammonium_SCRS,N,NPS Regular/Routine
+SACN_STCR_89.7,Ammonium_SCRS,N,NPS Regular/Routine
+APIS_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+APIS_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_03,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_98,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_99,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM098,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM099,Ammonium_SCRS,Y,Quality Control Sample-Blind Duplicate
+TripQC,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+GLKN_00,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_00,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+INDU_00,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+ISRO_00,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+PIRO_00,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+SLBE_00,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+VOYA_00,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+SACN_00,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+MISS_UM000,Ammonium_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_01,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+APIS_02,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+APIS_03,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+APIS_04,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+INDU_01,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+INDU_02,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+INDU_04,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+INDU_05,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_01,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_02,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_03,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_04,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_05,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_06,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_07,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_08,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_09,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_13,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_14,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_19,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_20,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_21,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_22,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_24,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_30,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+ISRO_32,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_01,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_02,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_03,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_04,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_05,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_06,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_07,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+PIRO_08,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PACQ_SP_01,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SACN_PHIP_SP_01,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SACN_WILO_0.5,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_20.0,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_15.8,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SACN_STCR_2.0,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_01,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_02,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_03,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_04,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_05,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_07,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_08,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_09,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_10,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+SLBE_11,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_01,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_02,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_03,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_04,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_05,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_06,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_07,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_08,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_09,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_10,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_11,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_12,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_13,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_14,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_15,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_16,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_17,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_18,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_19,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_20,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_21,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_22,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_23,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_24,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+VOYA_25,chl_a(fluor)_SCRS,N,Sample-Integrated Vertical Profile
+MISS_UM814,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+MISS_UM822,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+MISS_UM852,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+MISS_UM862,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+MISS_UM868,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+MISS_UM880,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_APLE_0.5,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_CLAM_0.7,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_KINI_2.2,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_NAKA_41.3,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_NAKA_4.8,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_NAKA_74.5,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_NAKA_84.6,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_SNKE_0.5,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_STCR_104.0,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_STCR_138.9,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_STCR_43.7,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_STCR_53.9,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_STCR_63.8,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+SACN_STCR_89.7,chl_a(fluor)_SCRS,N,NPS Regular/Routine
+APIS_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+APIS_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+INDU_03,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+ISRO_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+PIRO_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+SLBE_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+VOYA_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_STCR_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_98,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+SACN_NAKA_99,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM098,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+MISS_UM099,chl_a(fluor)_SCRS,Y,Quality Control Sample-Blind Duplicate
+TripQC,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+GLKN_00,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+APIS_00,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+INDU_00,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+ISRO_00,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+PIRO_00,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+SLBE_00,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+VOYA_00,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+SACN_00,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
+MISS_UM000,chl_a(fluor)_SCRS,Y,Quality Control Sample-Equipment Blank
